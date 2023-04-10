@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Post{% endblock title %}
+
+{% block main %}
+  <main>
+    </h2>Create your post</h2>
+    <div>
+      <form action="" method='POST'>
+        {% csrf_token %}
+        <label for="">Title:</label>
+        <input type="text" name="post_title">
+        <br>
+        <label for="">Author:</label>
+        <input type="text" name="post_author">
+        <br>
+        <label for="">Content:</label>
+        <textarea name="post_content" id="" cols="30" rows="10" placeholder="Type your thoughts in here ..."></textarea>
+        <br>
+        <input type="submit" value="Publish Post">
+      </form>
+    </div>
+  </main>
+{% endblock main %}
+
+{% comment %} Calling the footer to let it empty {% endcomment %}
+{% block footer %}
+{% endblock footer %}
