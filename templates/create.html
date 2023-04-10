@@ -5,6 +5,9 @@
 {% block main %}
   <main>
     </h2>Create your post</h2>
+    {% for message in messages %}
+      <p>*{{ message }}</p>
+    {% endfor %}
     <div>
       <form action="" method='POST'>
         {% csrf_token %}
