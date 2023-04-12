@@ -1,2 +1,2 @@
 # django-pulga-blog
-Django Pulga Chat
+Django Pulga Blog
