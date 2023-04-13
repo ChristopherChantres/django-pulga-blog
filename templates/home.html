@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% comment %} {% block link_stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock link_stylesheet %} {% endcomment %}
 {% block title %}Home{% endblock title%}
 
 {% block main %}
