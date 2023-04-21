@@ -7,17 +7,21 @@
 
 {% block main %}
   <main>
-    <h2>This is the home content</h2>
-    <p>This can be used by other pages and show its own thing</p>
-    <p><a href="create">[+]Create Post</a></p>
-    {% for post in posts %}
-      <hr>
-      <div class="post">
-          <h3><a href="{% url 'post_detail' post_id=post.id %}">{{ post.title }}</a></h3>
-          <p>By: {{ post.author }}</p>
-          <p>At: {{ post.created_at }}</p>
-          <p>{{ post.content }}</p>
+    <section>
+      <div class="container">
+        <div class="new-post">
+          <p class="create-post">Create Post</p>
+          <button>+</button>
+        </div>
+        {% for post in posts %}
+          <div class="card-post">
+              <h3><a href="{% url 'post_detail' post_id=post.id %}">{{ post.title }}</a></h3>
+              <p>By: {{ post.author }}</p>
+              <p>At: {{ post.created_at }}</p>
+              <p>{{ post.content }}</p>
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
+    </section>
   </main>
 {% endblock main %}
