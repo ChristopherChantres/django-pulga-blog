@@ -17,7 +17,11 @@
               <h3><a href="{% url 'post_detail' post_id=post.id %}">{{ post.title }}</a></h3>
               <p>By: {{ post.author }}</p>
               <p>At: {{ post.created_at }}</p>
-              <p>{{ post.content }}</p>
+              {% if post.content|wordcount > 20 %}
+                <p>{{ post.content.split|slice:":20"|join:" " }}......</p>
+              {% else %}
+                <p>{{ post.content }}</p>
+              {% endif %}
           </div>
         {% endfor %}
       </div>
