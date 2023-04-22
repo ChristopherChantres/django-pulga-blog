@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-h2 {
-  color: green;
-}
-
 main {
   width: 100vw;
 }
@@ -49,7 +45,7 @@ section {
   border-radius: 20px;
   background-color: pink;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 50px;
   cursor: pointer;
 }
 
@@ -61,7 +57,8 @@ section {
 }
 
 .create-post-btn:active {
-  border: 3px dotted rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+  background-color: rgb(255, 122, 145);
 }
 
 .card-post {
