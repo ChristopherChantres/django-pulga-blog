@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 h2 {
   color: green;
 }
@@ -20,11 +24,44 @@ section {
   width: 80%;
   margin-top: 30px;
   margin-bottom: 30px;
+  background-color: rgba(113, 113, 113, 0.17);
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .new-post {
   display: flex;
+  justify-content: center;
   margin-bottom: 20px;
+  width: 100%;
+}
+
+.create-post {
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.create-post-btn {
+  width: 100%;
+  height: 6rem;
+  border: none;
+  border-radius: 20px;
+  background-color: pink;
+  font-weight: bold;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.create-post-btn:hover {
+  border: 2px solid black;
+  background-color: var(--pink-main);
+  color: white;
+  transition: all .15s ease-in;
+}
+
+.create-post-btn:active {
+  border: 3px dotted rgb(255, 255, 255);
 }
 
 .card-post {
@@ -33,6 +70,7 @@ section {
   border-radius: 7px;
   margin-bottom: 20px;
   padding: 7px;
+  width: 100%;
 }
 
 .card-post h3 a {
