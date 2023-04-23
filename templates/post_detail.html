@@ -1,11 +1,26 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}{{ post.title }}{% endblock title %}
+{% block link_stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+{% endblock link_stylesheet %}
 
 {% block main %}
-  <h1>{{ post.title }}</h1>
-  <p>{{ post.author }}</p>
-  <p>{{ post.content }}</p>
-  <p>Created at: {{ post.created_at }}</p>
-  <p>Updated at: {{ post.updated_at }}</p>
+  <main>
+    <section class="post-header">
+      <div class="post-header-title">
+        <h1>{{ post.title }}</h1>
+      </div>
+      <div class="post-header-p">
+        <p><span>Created at:</span> {{ post.created_at }}</p>
+        <p><span>Updated at:</span> {{ post.updated_at }}</p>
+        <p><span>By:</span> {{ post.author }}</p>
+      </div>
+    </section>
+    <article>
+      <div>
+        <p><span>{{ post.content.split|slice:":1"|join:" " }} </span>{{ post.content.split|slice:"1:"|join:" " }}</p>
+      </div>
+    </article>
+  </main>
 {% endblock main %}
