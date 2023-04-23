@@ -7,20 +7,22 @@
 
 {% block main %}
   <main>
-    <section class="post-header">
-      <div class="post-header-title">
-        <h1>{{ post.title }}</h1>
-      </div>
-      <div class="post-header-p">
-        <p><span>Created at:</span> {{ post.created_at }}</p>
-        <p><span>Updated at:</span> {{ post.updated_at }}</p>
-        <p><span>By:</span> {{ post.author }}</p>
-      </div>
-    </section>
-    <article>
-      <div>
-        <p><span>{{ post.content.split|slice:":1"|join:" " }} </span>{{ post.content.split|slice:"1:"|join:" " }}</p>
-      </div>
-    </article>
+    <div class="main-container">
+      <section class="post-header">
+        <div class="post-header-title">
+          <h1>{{ post.title }}</h1>
+        </div>
+        <div class="post-header-p">
+          <p><span>Created at:</span> {{ post.created_at }}</p>
+          <p><span>Updated at:</span> {{ post.updated_at }}</p>
+          <p><span>By:</span> {{ post.author }}</p>
+        </div>
+      </section>
+      <article>
+        <div>
+          <p><span>{{ post.content.split|slice:":1"|join:" " }} </span>{{ post.content.split|slice:"1:"|join:" " }}</p>
+        </div>
+      </article>
+    </div>
   </main>
 {% endblock main %}
