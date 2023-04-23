@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Create Post{% endblock title %}
-
+{% block link_stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/create.css' %}">
+{% endblock link_stylesheet %}
 {% block main %}
   <main>
-    </h2>Create your post</h2>
-    {% for message in messages %}
-      <p>*{{ message }}</p>
-    {% endfor %}
-    <div>
-      <form action="" method='POST'>
-        {% csrf_token %}
-        <label for="">Title:</label>
-        <input type="text" name="post_title">
-        <br>
-        <label for="">Author:</label>
-        <input type="text" name="post_author">
-        <br>
-        <label for="">Content:</label>
-        <textarea name="post_content" id="" cols="30" rows="10" placeholder="Type your thoughts in here ..."></textarea>
-        <br>
-        <input type="submit" value="Publish Post">
-      </form>
+    <div class="main-container">
+      <section class="create-post-header">
+        <h2 class="create-post-header-title">Create your post</h2>
+        {% for message in messages %}
+          <p class="create-post-header-alert">Opps! {{ message }}</p>
+        {% endfor %}
+      </section>
+      <div class="form-container">
+        <form action="" method='POST'>
+          {% csrf_token %}
+          <label for="">Title:</label>
+          <input class="input-text" type="text" name="post_title" placeholder="Post title">
+          <label for="">Author:</label>
+          <input class="input-text" type="text" name="post_author" placeholder="Your name">
+          <label for="">Content:</label>
+          <textarea name="post_content" id="" placeholder="Type your thoughts in here ..."></textarea>
+          <input class="submit-button" type="submit" value="Publish Post">
+        </form>
+      </div>
     </div>
   </main>
 {% endblock main %}
