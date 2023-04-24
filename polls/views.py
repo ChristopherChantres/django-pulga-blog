@@ -6,7 +6,8 @@ from .models import Post
 # Create your views here.
 def home(request):
   posts = Post.objects.all().order_by('-created_at')
-  return render(request, 'home.html', {'posts':posts})
+  success_message = messages.get_messages(request)
+  return render(request, 'home.html', {'posts':posts, 'success_message': success_message})
 
 
 def create(request):
@@ -33,3 +34,10 @@ def edit(request):
 def post_detail(request, post_id):
   post = get_object_or_404(Post, pk=post_id)
   return render(request, 'post_detail.html', {'post': post})
+
+
+def delete_post(request, post_id):
+  post = get_object_or_404(Post, pk=post_id)
+  post.delete()
+  messages.success(request, 'Post deleted successfully!')
+  return redirect('home')

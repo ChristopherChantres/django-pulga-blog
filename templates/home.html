@@ -8,6 +8,13 @@
 {% block main %}
   <main>
     <section>
+      {% if messages %}
+        {% for message in messages %}
+          <div class="success-alert" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
       <div class="container">
         <div class="new-post">
           <button id="create-post" class="create-post-btn">+</button>
@@ -30,4 +37,5 @@
 {% endblock main %}
 {% block scripts %}
   <script src="{% static 'js/home.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% endblock scripts %}

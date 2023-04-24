@@ -22,7 +22,14 @@
         <div>
           <p><span>{{ post.content.split|slice:":1"|join:" " }} </span>{{ post.content.split|slice:"1:"|join:" " }}</p>
         </div>
+        <form action="{% url 'delete_post' post.id %}" method="POST">
+          {% csrf_token %}
+          <button id="delete-post" type="submit" class="delete-post">DELETE POST</button>
+        </form>
       </article>
     </div>
   </main>
 {% endblock main %}
+{% block scripts %}
+<script src="{% static 'js/post_detail.js' %}"></script>
+{% endblock scripts %}

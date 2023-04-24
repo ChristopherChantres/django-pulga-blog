@@ -13,6 +13,21 @@ section {
   align-items: center;
 }
 
+.success-alert {
+  margin-top: 30px;
+  background-color: green;
+  height: 3rem;
+  padding: 7px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -47,6 +62,7 @@ section {
   font-weight: bold;
   font-size: 50px;
   cursor: pointer;
+  color: black;
 }
 
 .create-post-btn:hover {
