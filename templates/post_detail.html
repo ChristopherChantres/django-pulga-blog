@@ -22,6 +22,7 @@
         <div>
           <p><span>{{ post.content.split|slice:":1"|join:" " }} </span>{{ post.content.split|slice:"1:"|join:" " }}</p>
         </div>
+        <a href="{% url 'delete_post' post.id %}">Delete Post</a>
       </article>
     </div>
   </main>
