@@ -17,11 +17,11 @@
         <form action="" method='POST'>
           {% csrf_token %}
           <label for="">Title:</label>
-          <input class="input-text" type="text" name="post_title" placeholder="Post title">
+          <input class="input-text" type="text" name="post_title" placeholder="Post title" required>
           <label for="">Author:</label>
-          <input class="input-text" type="text" name="post_author" placeholder="Your name">
+          <input class="input-text" type="text" name="post_author" placeholder="Your name" required>
           <label for="">Content:</label>
-          <textarea name="post_content" id="" placeholder="Type your thoughts in here ..."></textarea>
+          <textarea name="post_content" id="" placeholder="Type your thoughts in here ..." required></textarea>
           <input class="submit-button" type="submit" value="Publish Post">
         </form>
       </div>
