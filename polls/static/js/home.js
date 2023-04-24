@@ -3,3 +3,7 @@ function goToCreate() {
 }
 
 document.getElementById("create-post").addEventListener("click", goToCreate);
+
+setTimeout(function() {
+  $('.success-alert').fadeOut('slow');
+}, 5000);

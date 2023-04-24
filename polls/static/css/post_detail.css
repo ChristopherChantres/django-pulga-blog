@@ -65,6 +65,25 @@ article p span {
   font-size: 3rem;
 }
 
+.delete-post {
+  background-color: red;
+  height: 3rem;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;   
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.delete-post:hover {
+  background-color: rgb(172, 0, 0);
+}
+
 @media screen and (min-width: 768px) {
   main {
     display: flex;
