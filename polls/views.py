@@ -41,3 +41,7 @@ def delete_post(request, post_id):
   post.delete()
   messages.success(request, 'Post deleted successfully!')
   return redirect('home')
+
+
+def error_404(request, exception):
+  return render(request, '404.html')
